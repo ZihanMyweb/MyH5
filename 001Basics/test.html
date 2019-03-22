@@ -5,23 +5,38 @@
     <title>Title</title>
     <style type="text/css">
       body{
-        background-image: url(./images/10.jpg);
+        background-image: url(./images/11.jpg);
+        background-size:100%;
       }
-      @keyframes myfirst {
-        from{background:red;}
-        to{background:green; }
+      @keyframes myfirst{
+        0%{opacity:0;}
+        25%{opacity:100;}
+        50%{opacity:0;}
+        100%{opacity:0;}
       }
-      h1{
-        animation:myfirst 1s;
+      @keyframes mysecond{
+        0%{opacity:0;}
+        50%{opacity:0;}
+        75%{opacity:100;}
+        100%{opacity:0;}
       }
-      
+      p{
+        font-size:100px;
+        position:absolute;
+        width:100%;
+        text-align:center;
+      }
+      #a{
+        animation: myfirst 3s infinite;
+      }
+      #b{
+        animation: mysecond 3s infinite;
+      }
     </style>
   </head>
   <body>
-<h1>静夜思</h1>
-<p>床前明月光</p>
-<p>疑是地上霜</p>
-<p>举头望明月</p>
-<p>低头思故乡</p>
+<p id="a">举头望明月</p>
+<p id="b">低头思故乡</p>
   </body>
 </html>
+
