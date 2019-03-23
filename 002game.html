@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,37 +17,37 @@
 <script>
     var a=Math.random();
     var binggao=false;
-    function guess(){
-        if(binggao){
-            return ;
-        }
-        var guess=prompt("请猜一下筛子是几");
-        if(!Number.isInteger(guess/1)||guess>6||guess<1){
-            document.getElementById("message").innerHTML="输入有误!!";
+    function guess() {
+        if (binggao) {
             return;
         }
-        console.info("a======"+a);
-        console.info("guess======"+guess);
-        var diff=Math.abs(a-guess);
-        console.info("diff====="+diff);
-        if(guess==a){
-            document.getElementById("message").innerHTML="猜中了!!";
-            binggao=true;
+        var guess = prompt("请猜一下筛子是几");
+        if (!Number.isInteger(guess / 1) || guess > 6 || guess < 1) {
+            document.getElementById("message").innerHTML = "输入有误!!";
+            return;
         }
-        else if(guess>a&&diff>1) {
-            document.getElementById("message").innerHTML = "猜的太大了";
-        }
-            else if(guess>a&&diff<=1){
-                document.getElementById("message").innerHTML="猜的有点大";
+        console.info("a======" + a);
+        console.info("guess======" + guess);
+        var diff = Math.abs(a - guess);
+        console.info("diff=====" + diff);
+        if (guess == a) {
+            document.getElementById("message").innerHTML = "猜中了!!";
+            binggao = true;
+        } else if (guess > a) {
+            if (diff > 1) {
+                document.getElementById("message").innerHTML = "猜的太大了";
+            } else {
+                document.getElementById("message").innerHTML = "猜的有点大";
             }
-         else if(guess<a&&diff>1){
-                document.getElementById("message").innerHTML="猜的太小了";
 
+        } else {
+            if (diff > 1) {
+                document.getElementById("message").innerHTML = "猜的太小了";
+            } else {
+                document.getElementById("message").innerHTML = "猜的有点小了";
             }
-        else {
-            document.getElementById("message").innerHTML="猜的有点小了";
-        }
 
+        }
     }
     a=Math.floor(a*6)+1;
     console.info(a);
