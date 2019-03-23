@@ -31,20 +31,20 @@
         var diff = Math.abs(a - guess);
         console.info("diff=====" + diff);
         if (guess == a) {
-            document.getElementById("message").innerHTML = "猜中了!!";
+            alert ( "猜中了!!");
             binggao = true;
         } else if (guess > a) {
             if (diff > 1) {
-                document.getElementById("message").innerHTML = "猜的太大了";
+               alert( "猜的太大了");
             } else {
-                document.getElementById("message").innerHTML = "猜的有点大";
+                alert("猜的有点大");
             }
 
         } else {
             if (diff > 1) {
-                document.getElementById("message").innerHTML = "猜的太小了";
+                alert( "猜的太小了");
             } else {
-                document.getElementById("message").innerHTML = "猜的有点小了";
+               alert( "猜的有点小了");
             }
 
         }
